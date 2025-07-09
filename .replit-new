@@ -1,0 +1,7 @@
+run = "npm run dev-vite"
+modules = ["nodejs-20"]
+
+[deployment]
+run = ["sh", "-c", "npm run build"]
+deploymentTarget = "static"
+publicDir = "dist"
