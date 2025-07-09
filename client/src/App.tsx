@@ -1,7 +1,7 @@
 import { Switch, Route } from "wouter";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/queryClient";
-import Home from "../home/home";
+import Home from "./pages/home/home";
 
 function Router() {
   return (
