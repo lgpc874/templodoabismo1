@@ -1,0 +1,173 @@
+/* ============================== */
+/* IMPORTAÇÃO DE FONTES RITUALÍSTICAS */
+/* ============================== */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IM+Fell+DW+Pica:ital,wght@0,400;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Cardo:ital,wght@0,400;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================== */
+/* VARIÁVEIS RITUALÍSTICAS */
+/* ============================== */
+:root {
+  --titulo: #8b0000; /* título de todas as páginas */
+  --subtitulo: #555555; /* subtítulo de todas as páginas */
+  --citacao: #e6b800; /* citação de todas as páginas */
+  --texto: #999999; /* texto de todas as páginas */
+  --fundo-container: rgba(0, 0, 0, 0.3); /* fundo de todas as páginas */
+  --borda-container: #8b0000; /* borda de todas as páginas */
+  --brilho-container: #8b0000; /* brilho de todas as páginas */
+  --icone: #8b0000; /* ícone de todas as páginas */
+  --simbolo: #8b0000; /* símbolo de todas as páginas */
+  --fundo-primario: #000000; /* fundo principal */
+  --fundo-secundario: #111111; /* fundo secundário */
+  --acento-dourado: #d4af37; /* acento dourado ritualístico */
+  --vermelho-sangue: #8b0000; /* vermelho sangue */
+  --preto-abissal: #000000; /* preto abissal */
+}
+
+/* ============================== */
+/* TÍTULOS E CITAÇÕES */
+/* ============================== */
+.citacao-impacto {
+  font-family: 'EB Garamond', serif;
+  color: var(--simbolo);
+  line-height: 1.6;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+.citacao-traducao {
+  font-family: 'EB Garamond', serif;
+  background-color: var(--fundo);
+  color: var(--texto);
+  line-height: 1.6;
+  overflow-x: hidden;
+  text-align: center
+}
+
+.titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-family: 'Cinzel Decorative', serif;
+  color: var(--titulo);
+}
+
+.titulo img {
+  height: 3em;
+  filter: brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(7462%) hue-rotate(5deg) brightness(92%) contrast(120%);
+  }
+
+.subtitulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--subtitulo);
+}
+
+.citacao {
+  font-family: 'IM Fell DW Pica', serif;
+  color: var(--citacao);
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size: 1rem;
+  border-left: 2px solid var(--citacao);
+  border-right: 2px solid var(--citacao);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  text-align: center;
+}
+
+.citacao-autor {
+  font-family: 'IM Fell DW Pica', serif;
+  color: var(--titulo);
+}
+
+.texto {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: var(--texto);
+  font-family: 'EB Garamond', serif;
+  text-align: center;
+}
+
+.destaque {
+  color: var(--simbolo);
+  font-weight: bold;
+}
+
+.texto em {
+  color: var(--simbolo);
+  font-style: italic;
+}
+
+.texto strong {
+  color: var(--simbolo);
+  font-weight: bold;
+}
+
+.texto .destaque {
+  color: var(--simbolo);
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* ============================== */
+/* CONTAINERS E SEÇÕES */
+/* ============================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.content-section {
+  padding: 2rem;
+  border: 1px solid var(--borda-container);
+  background-color: var(--fundo-container);
+  backdrop-filter: blur(2px);
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgb(131, 2, 2, 1);
+}
+
+html {
+  background: var(--preto-abissal) !important;
+  min-height: 100vh;
+  position: relative;
+}
+
+body {
+  color: var(--texto);
+  font-family: 'EB Garamond', serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.simbolo-girando {
+  content: '';
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  background-image: url('https://i.postimg.cc/g20gqmdX/IMG-20250527-182235-1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translate(-50%, -50%);
+  animation: rotate-seal 180s linear infinite;
+  z-index: -1;
+  pointer-events: none;
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+  opacity: 0.2;
+}

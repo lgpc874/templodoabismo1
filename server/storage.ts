@@ -1,25 +1,49 @@
-// Storage interface and in-memory implementation
+import { users, type User, type InsertUser } from "@shared/schema";
+
+// modify the interface with any CRUD methods
+// you might need
+
 export interface IStorage {
-  getLevels(): Promise<any[]>;
-  getEntities(): Promise<any[]>;
-  getKnowledge(): Promise<any[]>;
+  getUser(id: number): Promise<User | undefined>;
+  getUserByUsername(username: string): Promise<User | undefined>;
+  createUser(user: InsertUser): Promise<User>;
 }
 
-class MemStorage implements IStorage {
-  private levels: any[] = [];
-  private entities: any[] = [];
-  private knowledge: any[] = [];
+export class MemStorage implements IStorage {
+  private users: Map<number, User>;
+  currentId: number;
 
-  async getLevels(): Promise<any[]> {
-    return this.levels;
+  constructor() {
+    this.users = new Map();
+    this.currentId = 1;
   }
 
-  async getEntities(): Promise<any[]> {
-    return this.entities;
+  async getUser(id: number): Promise<User | undefined> {
+    return this.users.get(id);
   }
 
-  async getKnowledge(): Promise<any[]> {
-    return this.knowledge;
+  async getUserByUsername(username: string): Promise<User | undefined> {
+    return Array.from(this.users.values()).find(
+      (user) => user.username === username,
+    );
+  }
+
+  async createUser(insertUser: InsertUser): Promise<User> {
+    const id = this.currentId++;
+    const now = new Date();
+    const user: User = { 
+      ...insertUser, 
+      id,
+      currentLevel: 1,
+      initiationDate: now,
+      lastAccess: null,
+      isActive: true,
+      profileData: null,
+      createdAt: now,
+      updatedAt: now
+    };
+    this.users.set(id, user);
+    return user;
   }
 }
 
