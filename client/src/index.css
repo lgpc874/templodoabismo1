@@ -1,152 +1,109 @@
-/* ============================== */
-/* IMPORTAÇÃO DE FONTES RITUALÍSTICAS */
-/* ============================== */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IM+Fell+DW+Pica:ital,wght@0,400;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Cardo:ital,wght@0,400;1,400&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ============================== */
-/* VARIÁVEIS RITUALÍSTICAS */
-/* ============================== */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
 :root {
-  --titulo: #8b0000; /* título de todas as páginas */
-  --subtitulo: #555555; /* subtítulo de todas as páginas */
-  --citacao: #e6b800; /* citação de todas as páginas */
-  --texto: #999999; /* texto de todas as páginas */
-  --fundo-container: rgba(0, 0, 0, 0.3); /* fundo de todas as páginas */
-  --borda-container: #8b0000; /* borda de todas as páginas */
-  --brilho-container: #8b0000; /* brilho de todas as páginas */
-  --icone: #8b0000; /* ícone de todas as páginas */
-  --simbolo: #8b0000; /* símbolo de todas as páginas */
-  --fundo-primario: #000000; /* fundo principal */
-  --fundo-secundario: #111111; /* fundo secundário */
-  --acento-dourado: #d4af37; /* acento dourado ritualístico */
-  --vermelho-sangue: #8b0000; /* vermelho sangue */
-  --preto-abissal: #000000; /* preto abissal */
+  --background: 0 0% 3.9%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 0 0% 9%;
+  --secondary: 0 0% 14.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 14.9%;
+  --muted-foreground: 0 0% 63.9%;
+  --accent: 0 0% 14.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 14.9%;
+  --input: 0 0% 14.9%;
+  --ring: 0 0% 83.1%;
+  --chart-1: 12 76% 61%;
+  --chart-2: 173 58% 39%;
+  --chart-3: 197 37% 24%;
+  --chart-4: 43 74% 66%;
+  --chart-5: 27 87% 67%;
+  --radius: 0.5rem;
+  
+  /* Custom mystical colors */
+  --abyss: 240 10% 3.9%;
+  --ritual-gold: 45 93% 47%;
+  --infernal: 0 63% 31%;
+  --shadow: 240 5% 11%;
+  --veil: 240 4% 16%;
 }
 
-/* ============================== */
-/* TÍTULOS E CITAÇÕES */
-/* ============================== */
-.citacao-impacto {
-  font-family: 'EB Garamond', serif;
-  color: var(--simbolo);
-  line-height: 1.6;
-  overflow-x: hidden;
-  text-align: center;
-}
-
-.citacao-traducao {
-  font-family: 'EB Garamond', serif;
-  background-color: var(--fundo);
-  color: var(--texto);
-  line-height: 1.6;
-  overflow-x: hidden;
-  text-align: center
-}
-
-.titulo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-  gap: 0.5rem;
-  font-weight: 400;
-  font-size: clamp(1.5rem, 5vw, 3rem);
-  font-family: 'Cinzel Decorative', serif;
-  color: var(--titulo);
-}
-
-.titulo img {
-  height: 3em;
-  filter: brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(7462%) hue-rotate(5deg) brightness(92%) contrast(120%);
-  }
-
-.subtitulo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.25rem;
-  font-weight: 300;
-  margin-bottom: 1rem;
-  text-align: center;
-  color: var(--subtitulo);
-}
-
-.citacao {
-  font-family: 'IM Fell DW Pica', serif;
-  color: var(--citacao);
-  font-size: 1rem;
-  border-left: 2px solid var(--citacao);
-  padding-left: 1rem;
-  margin: 1.5rem 0;
-  font-style: italic;
-  text-align: center;
-}
-
-.citacao-autor {
-  font-family: 'IM Fell DW Pica', serif;
-  color: var(--titulo);
-}
-
-.texto {
-  font-size: 1.15rem;
-  line-height: 1.8;
-  margin-bottom: 2rem;
-  color: var(--texto);
-  font-family: 'EB Garamond', serif;
-  text-align: center;
-}
-
-.destaque {
-  color: var(--simbolo);
-  font-weight: bold;
-}
-
-.texto em {
-  color: var(--simbolo);
-  font-style: italic;
-}
-
-.texto strong {
-  color: var(--simbolo);
-  font-weight: bold;
-}
-
-.texto .destaque {
-  color: var(--simbolo);
-  font-weight: 600;
-  font-style: italic;
-}
-
-/* ============================== */
-/* CONTAINERS E SEÇÕES */
-/* ============================== */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.content-section {
-  padding: 2rem;
-  border: 1px solid var(--borda-container);
-  background-color: var(--fundo-container);
-  backdrop-filter: blur(2px);
-  border-radius: 12px;
-}
-
-html {
-  background: var(--preto-abissal) !important;
-  min-height: 100vh;
-  position: relative;
+* {
+  border-color: hsl(var(--border));
 }
 
 body {
-  background: var(--preto-abissal);
-  color: var(--texto);
-  font-family: 'EB Garamond', serif;
-  line-height: 1.6;
-  overflow-x: hidden;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: 'Cormorant Garamond', serif;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cinzel', serif;
+}
+
+/* Custom mystical styling */
+.templo-container {
+  background: linear-gradient(135deg, hsl(var(--abyss)) 0%, hsl(var(--shadow)) 100%);
+  min-height: 100vh;
+}
+
+.ritual-text {
+  color: hsl(var(--ritual-gold));
+  text-shadow: 0 0 10px hsla(var(--ritual-gold), 0.3);
+}
+
+.infernal-accent {
+  color: hsl(var(--infernal));
+}
+
+.veil-bg {
+  background-color: hsl(var(--veil));
+  border: 1px solid hsl(var(--border));
+}
+
+.shadow-mystical {
+  box-shadow: 0 8px 32px hsla(var(--abyss), 0.8);
+}
+
+/* Animations */
+@keyframes ritual-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-ritual-pulse {
+  animation: ritual-pulse 2s infinite;
+}
+
+@keyframes veil-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-veil-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-veil-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, hsla(var(--ritual-gold), 0.1), transparent);
+  animation: veil-shimmer 3s infinite;
+}
