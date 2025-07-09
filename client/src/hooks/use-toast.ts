@@ -1,9 +1,17 @@
 import * as React from "react"
 
-import type {
-  ToastActionElement,
-  ToastProps,
-} from "@/components/ui/toast"
+// Temporary toast types until UI components are recreated
+type ToastProps = {
+  id?: string
+  title?: React.ReactNode
+  description?: React.ReactNode
+  action?: ToastActionElement
+  variant?: "default" | "destructive"
+  open?: boolean
+  onOpenChange?: (open: boolean) => void
+}
+
+type ToastActionElement = React.ReactElement
 
 const TOAST_LIMIT = 1
 const TOAST_REMOVE_DELAY = 1000000
