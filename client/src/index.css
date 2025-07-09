@@ -1,177 +1,430 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+/* ============================== */
+/* IMPORTAÇÃO DE FONTES RITUALÍSTICAS */
+/* ============================== */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IM+Fell+DW+Pica:ital,wght@0,400;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Cardo:ital,wght@0,400;1,400&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ============================== */
+/* VARIÁVEIS RITUALÍSTICAS */
+/* ============================== */
 :root {
-  --background: hsl(0, 0%, 4%);
-  --foreground: hsl(0, 0%, 95%);
-  --muted: hsl(0, 0%, 10%);
-  --muted-foreground: hsl(0, 0%, 65%);
-  --popover: hsl(0, 0%, 6%);
-  --popover-foreground: hsl(0, 0%, 95%);
-  --card: hsl(0, 0%, 6%);
-  --card-foreground: hsl(0, 0%, 95%);
-  --border: hsl(0, 0%, 15%);
-  --input: hsl(0, 0%, 15%);
-  --primary: hsl(51, 100%, 50%);
-  --primary-foreground: hsl(0, 0%, 4%);
-  --secondary: hsl(0, 0%, 10%);
-  --secondary-foreground: hsl(0, 0%, 95%);
-  --accent: hsl(0, 0%, 10%);
-  --accent-foreground: hsl(0, 0%, 95%);
-  --destructive: hsl(0, 84%, 60%);
-  --destructive-foreground: hsl(0, 0%, 98%);
-  --ring: hsl(51, 100%, 50%);
-  --radius: 0.5rem;
-
-  /* Custom Temple Colors */
-  --abyss: hsl(0, 0%, 4%);
-  --ritual-black: hsl(0, 0%, 10%);
-  --infernal: hsl(0, 100%, 27%);
-  --crimson: hsl(348, 83%, 47%);
-  --ritual-gold: hsl(43, 74%, 49%);
-  --sacred-amber: hsl(51, 100%, 50%);
-  --obsidian: hsl(0, 0%, 18%);
-  --shadow-gray: hsl(0, 0%, 29%);
+  --titulo: #8b0000; /* título de todas as páginas */
+  --subtitulo: #555555; /* subtítulo de todas as páginas */
+  --citacao: #e6b800; /* citação de todas as páginas */
+  --texto: #999999; /* texto de todas as páginas */
+  --fundo-container: rgba(0, 0, 0, 0.3); /* fundo de todas as páginas */
+  --borda-container: #8b0000; /* borda de todas as páginas */
+  --brilho-container: #8b0000; /* brilho de todas as páginas */
+  --icone: #8b0000; /* ícone de todas as páginas */
+  --simbolo: #8b0000; /* símbolo de todas as páginas */
+  --fundo-primario: #000000; /* fundo principal */
+  --fundo-secundario: #111111; /* fundo secundário */
+  --acento-dourado: #d4af37; /* acento dourado ritualístico */
+  --vermelho-sangue: #8b0000; /* vermelho sangue */
+  --preto-abissal: #000000; /* preto abissal */
 }
 
-.dark {
-  --background: hsl(0, 0%, 4%);
-  --foreground: hsl(0, 0%, 95%);
-  --muted: hsl(0, 0%, 10%);
-  --muted-foreground: hsl(0, 0%, 65%);
-  --popover: hsl(0, 0%, 6%);
-  --popover-foreground: hsl(0, 0%, 95%);
-  --card: hsl(0, 0%, 6%);
-  --card-foreground: hsl(0, 0%, 95%);
-  --border: hsl(0, 0%, 15%);
-  --input: hsl(0, 0%, 15%);
-  --primary: hsl(51, 100%, 50%);
-  --primary-foreground: hsl(0, 0%, 4%);
-  --secondary: hsl(0, 0%, 10%);
-  --secondary-foreground: hsl(0, 0%, 95%);
-  --accent: hsl(0, 0%, 10%);
-  --accent-foreground: hsl(0, 0%, 95%);
-  --destructive: hsl(0, 84%, 60%);
-  --destructive-foreground: hsl(0, 0%, 98%);
-  --ring: hsl(51, 100%, 50%);
+/* ============================== */
+/* TÍTULOS E CITAÇÕES */
+/* ============================== */
+.citacao-impacto {
+  font-family: 'EB Garamond', serif;
+  color: var(--simbolo);
+  line-height: 1.6;
+  overflow-x: hidden;
+  text-align: center;
 }
 
-@layer base {
-  * {
-    @apply border-border;
+.citacao-traducao {
+  font-family: 'EB Garamond', serif;
+  background-color: var(--fundo);
+  color: var(--texto);
+  line-height: 1.6;
+  overflow-x: hidden;
+  text-align: center
+}
+
+.titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  gap: 0.5rem;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-family: 'Cinzel Decorative', serif;
+  color: var(--titulo);
+}
+
+.titulo img {
+  height: 3em;
+  filter: brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(7462%) hue-rotate(5deg) brightness(92%) contrast(120%);
   }
 
-  body {
-    @apply font-cormorant antialiased bg-background text-foreground;
-    background-color: var(--abyss);
-    color: var(--foreground);
-    font-family: 'Cormorant Garamond', serif;
-  }
+.subtitulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--subtitulo);
+}
 
-  .font-cinzel {
-    font-family: 'Cinzel', serif;
-  }
+.citacao {
+  font-family: 'IM Fell DW Pica', serif;
+  color: var(--citacao);
+  font-size: 1rem;
+  border-left: 2px solid var(--citacao);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  text-align: center;
+}
 
-  .font-cormorant {
-    font-family: 'Cormorant Garamond', serif;
-  }
+.citacao-autor {
+  font-family: 'IM Fell DW Pica', serif;
+  color: var(--titulo);
+}
 
-  .bg-abyss {
-    background-color: var(--abyss);
-  }
+.texto {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: var(--texto);
+  font-family: 'EB Garamond', serif;
+  text-align: center;
+}
 
-  .bg-ritual-black {
-    background-color: var(--ritual-black);
-  }
+.destaque {
+  color: var(--simbolo);
+  font-weight: bold;
+}
 
-  .bg-infernal {
-    background-color: var(--infernal);
-  }
+.texto em {
+  color: var(--simbolo);
+  font-style: italic;
+}
 
-  .bg-crimson {
-    background-color: var(--crimson);
-  }
+.texto strong {
+  color: var(--simbolo);
+  font-weight: bold;
+}
 
-  .bg-ritual-gold {
-    background-color: var(--ritual-gold);
-  }
+.texto .destaque {
+  color: var(--simbolo);
+  font-weight: 600;
+  font-style: italic;
+}
 
-  .bg-sacred-amber {
-    background-color: var(--sacred-amber);
-  }
+/* ============================== */
+/* CONTAINERS E SEÇÕES */
+/* ============================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
 
-  .bg-obsidian {
-    background-color: var(--obsidian);
-  }
+.content-section {
+  padding: 2rem;
+  border: 1px solid var(--borda-container);
+  background-color: var(--fundo-container);
+  backdrop-filter: blur(2px);
+  border-radius: 12px;
+}
 
-  .bg-shadow-gray {
-    background-color: var(--shadow-gray);
-  }
+html {
+  background: var(--preto-abissal) !important;
+  min-height: 100vh;
+  position: relative;
+}
 
-  .text-ritual-gold {
-    color: var(--ritual-gold);
-  }
+body {
+  background: var(--preto-abissal);
+  color: var(--texto);
+  font-family: 'EB Garamond', serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-  .text-sacred-amber {
-    color: var(--sacred-amber);
-  }
+/* ============================== */
+/* NAVEGAÇÃO RITUALÍSTICA */
+/* ============================== */
+.nav-templo {
+  background: var(--fundo-container);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--borda-container);
+  padding: 1rem 0;
+}
 
-  .text-infernal {
-    color: var(--infernal);
-  }
+.nav-link {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--texto);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
 
-  .text-crimson {
-    color: var(--crimson);
-  }
+.nav-link:hover {
+  color: var(--titulo);
+  border-color: var(--borda-container);
+  background: var(--fundo-container);
+  box-shadow: 0 0 10px var(--brilho-container);
+}
 
-  .border-ritual-gold {
-    border-color: var(--ritual-gold);
-  }
+.nav-link.ativo {
+  color: var(--citacao);
+  border-color: var(--citacao);
+  background: rgba(230, 184, 0, 0.1);
+}
 
-  .bg-ritual-gradient {
-    background: linear-gradient(135deg, var(--abyss) 0%, var(--ritual-black) 50%, var(--obsidian) 100%);
-  }
+/* ============================== */
+/* BOTÕES RITUALÍSTICOS */
+/* ============================== */
+.botao-primario {
+  background: linear-gradient(135deg, var(--titulo), var(--vermelho-sangue));
+  color: #ffffff;
+  font-family: 'Cinzel Decorative', serif;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
-  .bg-infernal-gradient {
-    background: linear-gradient(135deg, var(--infernal) 0%, var(--crimson) 100%);
-  }
+.botao-primario:hover {
+  box-shadow: 0 0 20px var(--brilho-container);
+  transform: translateY(-2px);
+}
 
-  .bg-sacred-gradient {
-    background: linear-gradient(135deg, var(--ritual-gold) 0%, var(--sacred-amber) 100%);
-  }
+.botao-secundario {
+  background: transparent;
+  color: var(--citacao);
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--citacao);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-  .scroll-smooth {
-    scroll-behavior: smooth;
+.botao-secundario:hover {
+  background: var(--citacao);
+  color: var(--preto-abissal);
+}
+
+/* ============================== */
+/* CARDS E ELEMENTOS RITUALÍSTICOS */
+/* ============================== */
+.card-ritual {
+  background: var(--fundo-container);
+  border: 1px solid var(--borda-container);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 1rem 0;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.card-ritual:hover {
+  border-color: var(--citacao);
+  box-shadow: 0 0 15px rgba(230, 184, 0, 0.3);
+  transform: translateY(-3px);
+}
+
+.nivel-iniciatico {
+  background: linear-gradient(135deg, var(--fundo-container), rgba(139, 0, 0, 0.1));
+  border: 2px solid var(--titulo);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.nivel-iniciatico::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--titulo), var(--citacao), var(--titulo));
+}
+
+.numero-nivel {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--titulo);
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px var(--brilho-container);
+}
+
+.entidade-card {
+  background: radial-gradient(circle at center, var(--fundo-container), var(--preto-abissal));
+  border: 1px solid var(--borda-container);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.entidade-card:hover {
+  border-color: var(--acento-dourado);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+  transform: scale(1.02);
+}
+
+.entidade-nome {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--titulo);
+  margin-bottom: 0.5rem;
+}
+
+.entidade-titulo {
+  font-family: 'IM Fell DW Pica', serif;
+  color: var(--citacao);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+/* ============================== */
+/* ELEMENTOS MÍSTICOS */
+/* ============================== */
+.simbolo-ritual {
+  font-size: 2rem;
+  color: var(--simbolo);
+  text-align: center;
+  margin: 1rem 0;
+  filter: drop-shadow(0 0 10px var(--brilho-container));
+}
+
+.linha-separadora {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--borda-container), transparent);
+  margin: 2rem 0;
+}
+
+.glow-effect {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px var(--brilho-container), 0 0 10px var(--brilho-container);
+  }
+  to {
+    text-shadow: 0 0 10px var(--brilho-container), 0 0 20px var(--brilho-container), 0 0 30px var(--brilho-container);
   }
 }
 
-@layer utilities {
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
 
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
+/* ============================== */
+/* BIBLIOTECA E CONHECIMENTO */
+/* ============================== */
+.livro-sagrado {
+  background: linear-gradient(145deg, var(--fundo-container), rgba(230, 184, 0, 0.05));
+  border: 1px solid var(--citacao);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  transition: all 0.3s ease;
+}
 
-  @keyframes glow {
-    from {
-      text-shadow: 0 0 5px var(--ritual-gold), 0 0 10px var(--ritual-gold), 0 0 15px var(--ritual-gold);
-    }
-    to {
-      text-shadow: 0 0 10px var(--ritual-gold), 0 0 20px var(--ritual-gold), 0 0 30px var(--ritual-gold);
-    }
+.livro-sagrado:hover {
+  background: linear-gradient(145deg, rgba(230, 184, 0, 0.1), var(--fundo-container));
+  box-shadow: 0 0 15px rgba(230, 184, 0, 0.2);
+}
+
+.categoria-conhecimento {
+  font-family: 'Cinzel Decorative', serif;
+  color: var(--titulo);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  border-bottom: 2px solid var(--borda-container);
+  padding-bottom: 0.5rem;
+}
+
+/* ============================== */
+/* RESPONSIVIDADE RITUALÍSTICA */
+/* ============================== */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .titulo {
+    font-size: clamp(1.2rem, 4vw, 2.5rem);
+  }
+  
+  .numero-nivel {
+    font-size: 2rem;
+  }
+  
+  .card-ritual,
+  .nivel-iniciatico,
+  .entidade-card {
+    padding: 1.5rem;
   }
 }
+
+@media (max-width: 480px) {
+  .content-section {
+    padding: 1rem;
+  }
+  
+  .texto {
+    font-size: 1rem;
+  }
+  
+  .botao-primario,
+  .botao-secundario {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ============================== */
+/* SCROLLBAR RITUALÍSTICA */
+/* ============================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--preto-abissal);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--titulo), var(--citacao));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--citacao), var(--titulo));
+}
+
